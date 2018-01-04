@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Sample Page</title>
+        <link rel="icon" href="images/cc-small.png" type="image/png" sizes="32x32">
+    </head>
+    <body>
+        <h1>Knockout.js</h1>
+        <br/>
+
+        <div id="_observable">
+            <fieldset>
+                <legend>Observable</legend>
+                <p>First name: <strong data-bind="text: firstName"></strong></p>
+                <p>Last name: <strong data-bind="text: lastName"></strong></p>
+                <input data-bind="value: firstName"/>
+                <input data-bind="value: lastName"/>
+            </fieldset>
+        </div>
+
+        <br/>
+
+        <div id="_observable_array">
+            <fieldset>
+                <legend>Observable Array</legend>
+                <ul data-bind="foreach: soa">
+                    <li data-bind="text: name"></li>
+                </ul>
+                <button onclick="addNumber()">Add</button>
+            </fieldset>
+        </div>
+   
+        <br/>
+        
+        <div id="_computed_observables">
+            <fieldset>
+                <legend>Computed Observables</legend>
+                <span data-bind="text: fullName"></span>
+                <br/>
+                <label>First Name: <input type="text" data-bind="value: firstName"/></label>
+                <label>Last Name: <input type="text" data-bind="value: lastName"/></label>
+            </fieldset>
+        </div>
+
+        <br/>
+
+        <div id="_computed_observables_2">
+            <fieldset>
+                <legend>Computed Observables #2</legend>
+                <label>
+                    <input type="checkbox" data-bind="checked: selectAllProduce" title="Select All or None" />
+                    <strong>Produce</strong>
+                </label>
+                <hr/>
+                <div data-bind="foreach: produce">
+                    <label>
+                        <input type="checkbox" data-bind="checkedValue: $data, checked: $parent.selectedProduce"/>
+                        <span data-bind="text: $data"></span>
+                    </label>
+                    <br/>
+                </div>
+            </fieldset>
+        </div>
+
+        <br/>
+
+        <div id="_computed_observables_3">
+            <fieldset>
+                <legend>Computed Observables #3</legend>
+                <label>Your Name: </label><br/>
+                <label>Your Name in Uppercase: <span></span></label>
+            </fieldset>
+        </div>
+
+        <script src="js/knockout-min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/app2.js"></script>
+        <script src="js/cobservables.js"></script>
+    </body>
+</html>
