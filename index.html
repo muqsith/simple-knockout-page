@@ -67,10 +67,12 @@
         <div id="_computed_observables_3">
             <fieldset>
                 <legend>Computed Observables #3</legend>
-                <label>Your Name: </label><br/>
-                <label>Your Name in Uppercase: <span></span></label>
+                <label>Your Name: <input type="text" data-bind="textInput: text"/></label><br/>
+                <label>Your Name in Uppercase: <span data-bind="text: upperCaseText"></span></label>
             </fieldset>
         </div>
+
+        <br/>
 
         <script src="js/knockout-min.js"></script>
         <script src="js/app.js"></script>

@@ -48,4 +48,25 @@ _fo.selectedProduce.subscribe(function(selectedItems) {
 
 ko.applyBindings(_fo, document.querySelector('#_computed_observables_2'));
 
+// #3
+
+function UpperCaseObservable() {
+    this._text = ko.observable('bruce wayne');
+    this.upperCaseText = ko.observable(this._text().toUpperCase());
+    this.text = ko.computed({
+        owner: this,
+        read: function() {
+            return this._text();
+        },
+        write: function(val) {
+            this._text(val);
+            this.upperCaseText(val.toUpperCase());
+        }
+    });
+}
+
+var _uc = new UpperCaseObservable();
+
+
+ko.applyBindings(_uc, document.querySelector('#_computed_observables_3'));
 

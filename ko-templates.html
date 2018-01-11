@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Sample Page</title>
+
+        <link rel="icon" href="images/cc-small.png" type="image/png" sizes="32x32">
+        <script data-main="js/kotemplates-app" src="js/lib/require.min.js"></script>
+        
+    </head>
+    <body>
+        <h1>Knockout.js - Components, Templates</h1>
+        
+        <br/>
+        
+        <div id="kotemplates">
+            <fieldset>
+                <legend>Components - Test</legend>
+                <h4>First instance, without parameters</h4>
+                <div data-bind='component: "message-editor"'></div>
+                
+                <h4>Second instance, passing parameters</h4>
+                <div data-bind='component: {
+                    name: "message-editor",
+                    params: { initialText: "Hello, world!" }
+                }'></div>
+            </fieldset>
+        </div>
+
+        <br/>
+
+    </body>
+</html>
