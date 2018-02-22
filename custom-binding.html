@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Sample Page</title>
+
+        <link rel="icon" href="images/cc-small.png" type="image/png" sizes="32x32">
+        <script data-main="js/custom-binding" src="js/lib/require.min.js"></script>
+
+    </head>
+    <body>
+        <h1>Knockout.js - Custom binding</h1>
+
+        <br/>
+
+        <div id="custombinding">
+            <fieldset>
+                <legend>Custom binding - Tests</legend>
+                <div data-bind="slideVisible: giftWrap, slideDuration:600, name: 'muqsith'">You have selected the option</div>
+                <label><input type="checkbox" data-bind="checked: giftWrap" /> Gift wrap</label>
+            </fieldset>
+        </div>
+
+        <br/>
+
+    </body>
+</html>
